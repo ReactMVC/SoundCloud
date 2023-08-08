@@ -84,6 +84,7 @@ class SoundCloud extends Request
             } else {
                 return [
                     'status' => true,
+                    'id' => $id,
                     'picture' => str_replace("large", "original", $musicData->artwork_url) ?? $musicData->user->avatar_url,
                     'title' => $musicData->title,
                     'release' => $musicData->created_at,
