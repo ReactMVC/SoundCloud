@@ -10,7 +10,7 @@ To install the SoundCloud PHP Library, add the following line to your `composer.
 composer require darkphp/soundcloud
 ```
 
-## Usage
+## Usage ( php +8.1 )
 ```php
 <?php
 require_once 'vendor/autoload.php';
