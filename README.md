@@ -11,9 +11,6 @@ composer require darkphp/soundcloud
 ```
 
 ## Usage
-
-To use the SoundCloud PHP Library, you need to include the `SoundCloud.php` file in your project. The library extends the `Request` class, which provides methods for making HTTP requests.
-
 ```php
 <?php
 require_once 'vendor/autoload.php';
@@ -64,3 +61,10 @@ Retrieves the details of a music track based on the provided SoundCloud URL. Ret
 ## License
 
 This library is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Developer 
+SoundCloudPHP is developed by Hossein Pira.
+- Email: h3dev.pira@gmail.com 
+- Telegram: @h3dev
+
+If you have any questions, comments, or feedback, please feel free to contact John via email or Telegram.
