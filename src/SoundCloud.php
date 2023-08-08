@@ -117,25 +117,6 @@ class SoundCloud extends Request
         $this->downloadAndPlay($urls, $trackName);
     }
 
-    public function getDirectDownloadLink(string $id): array|false
-    {
-        $dataMusic = $this->getMusic($id, true);
-        $trackAuthorization = $dataMusic->track_authorization;
-        $url = $dataMusic->media->transcodings[0]->url;
-        $data = json_decode(
-            self::get(
-                "$url?" . self::arrayToUrlEncode(
-                    [
-                        'client_id' => $this->getClientId(),
-                        'track_authorization' => $trackAuthorization
-                    ]
-                )
-            )
-        );
-        $urls = $this->exportUrl($data->url);
-        return $urls;
-    }
-
     public function getMusicWithUrl(string $url): bool|stdClass|array
     {
         if (
