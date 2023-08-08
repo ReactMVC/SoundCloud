@@ -104,34 +104,36 @@ class SoundCloud extends Request
         $url = $dataMusic->media->transcodings[0]->url;
         $trackName = $dataMusic->title . '.mp3';
         $data = json_decode(
-            self::get("$url?" . self::arrayToUrlEncode(
-                [
-                    'client_id' => $this->getClientId(),
-                    'track_authorization' => $trackAuthorization
-                ]
-            )
+            self::get(
+                "$url?" . self::arrayToUrlEncode(
+                    [
+                        'client_id' => $this->getClientId(),
+                        'track_authorization' => $trackAuthorization
+                    ]
+                )
             )
         );
         $urls = $this->exportUrl($data->url);
         $this->downloadAndPlay($urls, $trackName);
     }
 
-    public function getDirectDownloadLink(string $id): string|false
+    public function getDirectDownloadLink(string $id): array|false
     {
         $dataMusic = $this->getMusic($id, true);
         $trackAuthorization = $dataMusic->track_authorization;
         $url = $dataMusic->media->transcodings[0]->url;
         $data = json_decode(
-            self::get("$url?" . self::arrayToUrlEncode(
-                [
-                    'client_id' => $this->getClientId(),
-                    'track_authorization' => $trackAuthorization
-                ]
-            )
+            self::get(
+                "$url?" . self::arrayToUrlEncode(
+                    [
+                        'client_id' => $this->getClientId(),
+                        'track_authorization' => $trackAuthorization
+                    ]
+                )
             )
         );
         $urls = $this->exportUrl($data->url);
-        return $urls['progressive'];
+        return $urls;
     }
 
     public function getMusicWithUrl(string $url): bool|stdClass|array
