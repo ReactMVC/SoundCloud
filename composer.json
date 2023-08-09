@@ -1,6 +1,7 @@
 {
     "name": "darkphp/soundcloud",
     "description": "A simple PHP class for download music from soundcloud using cURL",
+    "homepage": "https://github.com/Hossein-Pira/SoundCloud",
     "type": "library",
     "license": "MIT",
     "keywords": [
@@ -18,7 +19,12 @@
     "authors": [
         {
             "name": "Hossein Pira",
-            "email": "h3dev.pira@gmail.com"
+            "email": "h3dev.pira@gmail.com",
+            "role": "Developer"
         }
-    ]
+    ],
+    "require": {
+        "php" : ">=8.1",
+        "ext-curl": "*"
+    }
 }
